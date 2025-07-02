@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AA制還款計算工具 (PWA)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="AA Split" />
+  <style>body { padding: 1rem; }</style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="mb-4 text-center">AA制還款計算工具 (PWA)</h2>
+    <p>這裡是你的 AA Split 工具主畫面。</p>
+  </div>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('✅ Service Worker 註冊成功'))
+        .catch(err => console.error('❌ 註冊失敗:', err));
+    }
+  </script>
+</body>
+</html>
